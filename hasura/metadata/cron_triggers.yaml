@@ -1,1 +1,29 @@
-[]
+- name: cron1
+  webhook: '{{BACKEND_BASE_URL}}/1'
+  schedule: '*/5 * * * *'
+  include_in_metadata: true
+  payload: {}
+  retry_conf:
+    num_retries: 0
+    retry_interval_seconds: 10
+    timeout_seconds: 290
+    tolerance_seconds: 21600
+  comment: ""
+- name: cron2
+  webhook: '{{BACKEND_BASE_URL}}/2'
+  schedule: '*/5 * * * *'
+  include_in_metadata: true
+  payload: {}
+  comment: cron2
+- name: cron3
+  webhook: '{{BACKEND_BASE_URL}}/3'
+  schedule: '*/3 * * * *'
+  include_in_metadata: true
+  payload: {}
+  comment: cron3
+- name: cron4
+  webhook: '{{BACKEND_BASE_URL}}/4'
+  schedule: '* * * * *'
+  include_in_metadata: true
+  payload: {}
+  comment: cron4
