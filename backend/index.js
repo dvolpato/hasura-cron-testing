@@ -29,27 +29,21 @@ app.use(async (ctx, next) => {
 });
 
 const router = new Router();
-router.post('/1', async (ctx) => {
-  console.log('/1 - doing some work');
-  await delay(60 * 1000);
+router.post('/quick', async (ctx) => {
+  console.log('/quick - doing some work');
+  await delay(5 * 1000);
   ctx.status = 200;
 });
 
-router.post('/2', async (ctx) => {
-  console.log('/2 - doing some work');
+router.post('/medium', async (ctx) => {
+  console.log('/medium - doing some work');
   await delay(40 * 1000);
   ctx.status = 200;
 });
 
-router.post('/3', async (ctx) => {
-  console.log('/3 - doing some work');
-  await delay(80 * 1000);
-  ctx.status = 200;
-});
-
-router.post('/4', async (ctx) => {
-  console.log('/4 - doing some work');
-  await delay(10 * 1000);
+router.post('/long', async (ctx) => {
+  console.log('/long - doing some work');
+  await delay(120 * 1000);
   ctx.status = 200;
 });
 
